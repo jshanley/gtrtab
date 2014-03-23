@@ -1,0 +1,39 @@
+/* gtrtab theme for codemirror */
+
+.cm-s-gtrtab.CodeMirror {
+  line-height: 1.40em;
+  font-family: Monaco, Menlo, "Courier New", monospace;
+  color: #ddd;
+  background: #333335;
+}
+
+.cm-s-gtrtab .CodeMirror-lines .CodeMirror-cursor {
+  border-left: 2px solid #dfdada;
+}
+
+.cm-s-gtrtab .cm-line-string {
+  background: red;
+}
+
+.cm-s-gtrtab .cm-string {
+  color: #777;
+}
+
+.cm-s-gtrtab .string-line {
+  background: orange;
+}
+
+.cm-s-gtrtab .cm-fret {
+  color: #efefef;
+}
+
+.cm-s-gtrtab .cm-bar {
+  color: #ed9;
+}
+
+.cm-s-gtrtab .cm-bend,
+.cm-s-gtrtab .cm-slide,
+.cm-s-gtrtab .cm-hammer,
+.cm-s-gtrtab .cm-vib {
+  color: #9dd;
+}
