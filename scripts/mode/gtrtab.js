@@ -17,11 +17,11 @@
       '/': 'slide up',
       '\\': 'slide down',
       'b': 'bend',
-      's': 'slide'
+      's': 'slide',
+      '|': 'bar'
     };
     return {
       token: function(stream) {
-        console.log(stream);
         if (stream.eatSpace()) {
           return null;
         }
@@ -31,14 +31,8 @@
         if (stream.eat(/[0-9]+/)) {
           return 'fret';
         }
-        if (stream.eat('||')) {
-          return 'double bar';
-        }
-        if (stream.eat('|')) {
-          return 'bar';
-        }
-        var t = stream.eat(function(char){
-          return (char in TOKEN_NAMES);
+        var t = stream.eat(function(c){
+          return (c in TOKEN_NAMES);
         });
         if (t){
           return (TOKEN_NAMES[t]);
