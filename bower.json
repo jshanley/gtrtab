@@ -19,7 +19,9 @@
   ],
   "dependencies": {
     "codemirror": "~4.0.3",
+    "requirejs": "~2.1.11",
     "normalize-css": "~3.0.0",
-    "requirejs": "~2.1.11"
+    "jquery": "1.11",
+    "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip"
   }
 }

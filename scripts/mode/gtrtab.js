@@ -14,10 +14,10 @@
 
   CodeMirror.defineMode('gtrtab', function(config, parserConfig) {
     var TOKEN_NAMES = {
-      '/': 'slide up',
+      /*'/': 'slide up',
       '\\': 'slide down',
       'b': 'bend',
-      's': 'slide',
+      's': 'slide',*/
       '|': 'bar'
     };
     return {

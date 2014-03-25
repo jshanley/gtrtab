@@ -17,19 +17,36 @@ module.exports = function(grunt) {
       html: {
         files: ['./**/*.html']
       },
+      less: {
+        options: {
+          livereload: false
+        },
+        files: ['styles/less/**/*.less'],
+        tasks: ['less']
+      },
       css: {
-        files: ['styles/**/*.css']
+        files: ['styles/css/**/*.css']
       },
       js: {
         files: ['scripts/**/*.js']
+      }
+    },
+
+    less: {
+      dev: {
+        files: {
+          'styles/css/gtrtab.css': 'styles/less/gtrtab.less',
+          'styles/css/style.css': 'styles/less/style.less'
+        }
       }
     }
 
   });
 
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('preview', ['connect', 'watch']);
+  grunt.registerTask('preview', ['less', 'connect', 'watch']);
   grunt.registerTask('default', ['preview']);
 };

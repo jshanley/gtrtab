@@ -1,0 +1,24 @@
+.navbar {
+  display: block;
+  background: #ed9;
+  color: #333335;
+}
+.navbar * {
+  display: inline-block;
+}
+.navbar header {
+  padding: 0.25em;
+  font-size: 2em;
+}
+.preset-select .tuning {
+  color: #777;
+  text-align: right;
+  margin-left: 20px;
+}
+.tab-stave {
+  background: rgba(85, 85, 85, 0.3);
+}
+#tab {
+  overflow-y: scroll;
+  border-left: 10px solid #555;
+}
