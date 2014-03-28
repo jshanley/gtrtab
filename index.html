@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Document</title>
+  <title>gtrtab</title>
   <link rel="stylesheet" href="vendor/normalize-css/normalize.css" />
   <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
   <link rel="stylesheet" href="styles/css/gtrtab.css" />
@@ -11,6 +11,9 @@
 <body>
   <nav class="navbar">
     <header>gtrtab</header>
+    <label for="strings">Strings:</label>
+    <input id="input-strings" type="number" name="strings" value="6" min="2" max="12" />
+    <input type="button" id="btn-overwrite" name="toggle-overwrite" value="overwrite" />
   </nav>
   <div id="tab"></div>
   <script data-main="scripts/main.js" src="vendor/requirejs/require.js"></script>

@@ -20,18 +20,33 @@
     var tab = CodeMirror(document.getElementById('tab'), {
       lineNumbers: false,
       mode: 'gtrtab',
-      theme: 'gtrtab'
+      theme: 'gtrtab',
+      value: '\n'
     });
 
-    tab.stringsPerStave = 6;
 
+    tab.stringsPerStave = $('#input-strings').val();
+
+    // register keymap
     keymap(tab);
+
+    // log instance for debug
+    console.log('CMInstance:', tab);
+    window.TAB = tab;
+    window.CM = CodeMirror;
 
     function maintainSize() {
       tab.setSize('100%', $(window).height() - $('.navbar').height());
     }
     $(window).resize(maintainSize);
     $(document).ready(maintainSize);
+    $('#input-strings').change(function() {
+      tab.stringsPerStave = $(this).val();
+    });
+    $('#btn-overwrite').click(function() {
+      tab.handleOverwriteToggle();
+      tab.focus();
+    });
   });
 
 

@@ -7,24 +7,23 @@
 .cm-s-gtrtab .CodeMirror-lines .CodeMirror-cursor {
   border-left: 2px solid #dfdada;
 }
-.cm-s-gtrtab .cm-line-string {
-  background: red;
+.cm-s-gtrtab .CodeMirror-overwrite .CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: rgba(223, 218, 218, 0.8);
 }
-.cm-s-gtrtab .cm-string {
-  color: #777;
-}
-.cm-s-gtrtab .string-line {
-  background: orange;
-}
-.cm-s-gtrtab .cm-fret {
+.cm-s-gtrtab .string .cm-fret {
   color: #efefef;
 }
-.cm-s-gtrtab .cm-bar {
+.cm-s-gtrtab .string .cm-bar {
   color: #ee9;
 }
-.cm-s-gtrtab .cm-bend,
-.cm-s-gtrtab .cm-slide,
-.cm-s-gtrtab .cm-hammer,
-.cm-s-gtrtab .cm-vibrato {
+.cm-s-gtrtab .string .cm-dash {
+  color: #aaa;
+}
+.cm-s-gtrtab .string .cm-bend,
+.cm-s-gtrtab .string .cm-slide,
+.cm-s-gtrtab .string .cm-hammer,
+.cm-s-gtrtab .string .cm-vibrato {
   color: #9dd;
 }

@@ -10,31 +10,28 @@
   .CodeMirror-lines .CodeMirror-cursor {
     border-left: 2px solid #dfdada;
   }
-
-  .cm-line-string {
-    background: red;
+  .CodeMirror-overwrite .CodeMirror-cursor {
+    width: auto;
+    border: 0;
+    background: fade(#dfdada, 80%);
   }
 
-  .cm-string {
-    color: #777;
+  .string {
+    .cm-fret {
+      color: #efefef;
+    }
+    .cm-bar {
+      color: #ee9;
+    }
+    .cm-dash {
+      color: #aaa;
+    }
+    .cm-bend,
+    .cm-slide,
+    .cm-hammer,
+    .cm-vibrato {
+      color: #9dd;
+    }
   }
 
-  .string-line {
-    background: orange;
-  }
-
-  .cm-fret {
-    color: #efefef;
-  }
-
-  .cm-bar {
-    color: #ee9;
-  }
-
-  .cm-bend,
-  .cm-slide,
-  .cm-hammer,
-  .cm-vibrato {
-    color: #9dd;
-  }
 }

@@ -1,24 +1,33 @@
-define(['commands'], function(registerTabCommands) {
+define(['commands'], function(commands) {
 
   return function(tab) {
 
-    registerTabCommands(tab);
+    // register commands
+    commands(tab);
 
     tab.addKeyMap({
       'Tab': function(tab) {
-        tab.appendAcrossStave('----');
-      },
-      '-': function(tab) {
-        tab.appendAcrossStave('-');
+        var here = tab.getCursor();
+        if (tab.isStave(here.line)) {
+          tab.appendAcrossStave('----');
+        } else {
+          tab.addStaveHere();
+        }
       },
       'Shift-\\': function(tab) {
-        tab.appendAcrossStave('|');
+        tab.handleBarCharacterPress();
+      },
+      '-': function(tab) {
+        tab.handleDashCharacterPress();
       },
       'Enter': function(tab) {
         tab.handleEnterPress();
       },
-      'K': function(tab) {
-        tab.execCommand('goLineDown');
+      'Shift-Enter': function(tab) {
+        tab.setCursorAcrossStave();
+      },
+      'Alt-O': function(tab) {
+        tab.handleOverwriteToggle();
       }
     });
 

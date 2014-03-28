@@ -14,11 +14,18 @@
 
   CodeMirror.defineMode('gtrtab', function(config, parserConfig) {
     var TOKEN_NAMES = {
-      /*'/': 'slide up',
+      '/': 'slide up',
       '\\': 'slide down',
       'b': 'bend',
-      's': 'slide',*/
-      '|': 'bar'
+      's': 'slide',
+      'h': 'hammer',
+      'p': 'pull',
+      '|': 'bar',
+      '^': 'bend',
+      'v': 'bend',
+      '~': 'vibrato',
+      '(': 'paren left',
+      ')': 'paren right'
     };
     return {
       token: function(stream) {
@@ -26,7 +33,7 @@
           return null;
         }
         if (stream.eat(/\-+/)) {
-          return 'string';
+          return 'line-string dash';
         }
         if (stream.eat(/[0-9]+/)) {
           return 'fret';
