@@ -1,7 +1,7 @@
 .cm-s-gtrtab.CodeMirror {
   line-height: 1.40em;
   font-family: Monaco, Menlo, "Courier New", monospace;
-  color: #ddd;
+  color: #eee;
   background: #333335;
 }
 .cm-s-gtrtab .CodeMirror-lines .CodeMirror-cursor {
@@ -12,18 +12,21 @@
   border: 0;
   background: rgba(223, 218, 218, 0.8);
 }
-.cm-s-gtrtab .string .cm-fret {
-  color: #efefef;
+.cm-s-gtrtab .stave .cm-fret {
+  color: #f7f7f7;
 }
-.cm-s-gtrtab .string .cm-bar {
+.cm-s-gtrtab .stave .cm-barline {
   color: #ee9;
 }
-.cm-s-gtrtab .string .cm-dash {
+.cm-s-gtrtab .stave .cm-dash {
   color: #aaa;
 }
-.cm-s-gtrtab .string .cm-bend,
-.cm-s-gtrtab .string .cm-slide,
-.cm-s-gtrtab .string .cm-hammer,
-.cm-s-gtrtab .string .cm-vibrato {
-  color: #9dd;
+.cm-s-gtrtab .stave .cm-implied {
+  color: #7cf;
+}
+.cm-s-gtrtab .stave .cm-bend,
+.cm-s-gtrtab .stave .cm-slide,
+.cm-s-gtrtab .stave .cm-hammer,
+.cm-s-gtrtab .stave .cm-vibrato {
+  color: #7cf;
 }

@@ -20,24 +20,28 @@
       's': 'slide',
       'h': 'hammer',
       'p': 'pull',
-      '|': 'bar',
+      '|': 'barline',
       '^': 'bend',
       'v': 'bend',
-      '~': 'vibrato',
-      '(': 'paren left',
-      ')': 'paren right'
+      '~': 'vibrato'
     };
     return {
       token: function(stream) {
         if (stream.eatSpace()) {
           return null;
         }
-        if (stream.eat(/\-+/)) {
-          return 'line-string dash';
+        if (stream.match(/^\-+/)) {
+          return 'line-stave dash';
         }
-        if (stream.eat(/[0-9]+/)) {
+
+        if (stream.match(/^\([0-9]+\)/)) {
+          return 'implied';
+        }
+
+        if (stream.match(/[0-9]+(?!\))/)) {
           return 'fret';
         }
+
         var t = stream.eat(function(c){
           return (c in TOKEN_NAMES);
         });

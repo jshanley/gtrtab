@@ -32,7 +32,7 @@ define(['jquery', 'codemirror'], function($,CM) {
       var handle = tab.getLineHandle(line) || {};
       if (handle.styles) {
         for (var s = 0; s < handle.styles.length; s++) {
-          if (handle.styles[s] === 'line-string dash') {
+          if (handle.styles[s] === 'line-stave dash') {
             return true;
           }
         }
