@@ -1,14 +1,69 @@
+@mono: Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
+
+.user-select(@sel) {
+  -webkit-touch-callout: @sel;
+  -webkit-user-select: @sel;
+  -khtml-user-select: @sel;
+  -moz-user-select: @sel;
+  -ms-user-select: @sel;
+  user-select: @sel;
+}
+
 .navbar {
   display: block;
   background: #ed9;
   color: #333335;
+  cursor: pointer;
+  cursor: hand;
   * {
     display: inline-block;
   }
   header {
     padding: 0.25em;
-    font-size: 2em;
+    font-size: 1em;
   }
+  .hint {
+    font-size: 0.8em;
+    color: darken(#ed9, 40%);
+  }
+  .user-select(none);
+}
+
+.toolbar {
+  display: block;
+  background: #777;
+  padding: 0.5em;
+  .user-select(none);
+  border-left: 10px solid #555;
+  label {
+    font-size: 0.8em;
+    font-family: @mono;
+  }
+}
+
+#toggle-overtype {
+  font-size: 0.8em;
+  font-family: @mono;
+  border: 1px solid #333;
+  color: #333;
+  padding: 0.25em;
+  margin-right: 0.25em;
+  cursor: pointer;
+  cursor: hand;
+  &.active {
+    border-color: #ccc;
+    color: #ccc;
+  }
+}
+
+.labeled-input {
+  padding: 0.25em;
+}
+
+#input-strings {
+  border: 1px solid #333;
+  font-family: @mono;
+  font-size: 0.8em;
 }
 
 .preset-select {
@@ -22,12 +77,4 @@
 #tab {
   overflow-y: scroll;
   border-left: 10px solid #555;
-}
-
-#btn-overwrite {
-  border: 2px solid #333;
-  background: #efefef;
-  &.active {
-    background: #2ae;
-  }
 }

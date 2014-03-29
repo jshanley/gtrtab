@@ -3,20 +3,24 @@
   require.config({
     'baseUrl': 'scripts',
     'paths': {
+      'drive-api': 'https://apis.google.com/js/client.js?onload=handleClientLoad',
       'jquery': '../vendor/jquery/dist/jquery.min',
-      'codemirror': '../vendor/codemirror/lib/codemirror',
-      'jquery.chosen': '../vendor/chosen/chosen.jquery.min'
-    },
-    'shim': {
-      'jquery.chosen': ['jquery']
+      'codemirror': '../vendor/codemirror/lib/codemirror'
     }
   });
 
   // load CodeMirror and the 'gtrtab' mode
   // load jQuery and the 'chosen' plugin
   // load local modules
-  require(['jquery', 'codemirror', 'keymap', 'mode/gtrtab'],
-  function($, CodeMirror, keymap){
+  require([
+    'jquery',
+    'codemirror',
+    'mode/gtrtab',
+    'gdrive'
+  ],
+  function($, CodeMirror){
+
+    // create cm instance
     var tab = CodeMirror(document.getElementById('tab'), {
       lineNumbers: false,
       mode: 'gtrtab',
@@ -24,29 +28,42 @@
       value: '\n'
     });
 
-
-    tab.stringsPerStave = $('#input-strings').val();
-
     // register keymap
-    keymap(tab);
+    require(['keymap'], function(keymap) {
+      keymap(tab);
+    });
 
     // log instance for debug
     console.log('CMInstance:', tab);
     window.TAB = tab;
     window.CM = CodeMirror;
 
-    function maintainSize() {
-      tab.setSize('100%', $(window).height() - $('.navbar').height());
-    }
-    $(window).resize(maintainSize);
-    $(document).ready(maintainSize);
-    $('#input-strings').change(function() {
-      tab.stringsPerStave = $(this).val();
+    // dom ready
+    $(document).ready(function() {
+      // handle sizing of the tab editor
+      tab.maintainSize = function() {
+        var remainingHeight;
+        if ($('.toolbar').is(':visible')) {
+          remainingHeight = $(window).height() - $('.navbar').outerHeight() - $('.toolbar').outerHeight();
+        } else {
+          remainingHeight = $(window).height() - $('.navbar').outerHeight();
+        }
+        tab.setSize('100%', remainingHeight);
+      };
+      tab.maintainSize();
+      $(window).resize(tab.maintainSize);
+
+      // setup toolbar
+      require(['toolbar'], function(toolbar) {
+        toolbar(tab);
+      });
+
     });
-    $('#btn-overwrite').click(function() {
-      tab.handleOverwriteToggle();
-      tab.focus();
-    });
+
+
+
+
+
   });
 
 

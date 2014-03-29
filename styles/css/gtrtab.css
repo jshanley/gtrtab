@@ -1,6 +1,6 @@
 .cm-s-gtrtab.CodeMirror {
   line-height: 1.40em;
-  font-family: Monaco, Menlo, "Courier New", monospace;
+  font-family: Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
   color: #eee;
   background: #333335;
 }
@@ -27,6 +27,7 @@
 .cm-s-gtrtab .stave .cm-bend,
 .cm-s-gtrtab .stave .cm-slide,
 .cm-s-gtrtab .stave .cm-hammer,
+.cm-s-gtrtab .stave .cm-pull,
 .cm-s-gtrtab .stave .cm-vibrato {
   color: #7cf;
 }

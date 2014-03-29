@@ -26,7 +26,7 @@ define(['commands'], function(commands) {
       'Shift-Enter': function(tab) {
         tab.setCursorAcrossStave();
       },
-      'Alt-O': function(tab) {
+      'Alt-Enter': function(tab) {
         tab.handleOverwriteToggle();
       }
     });

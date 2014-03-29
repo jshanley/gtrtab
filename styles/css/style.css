@@ -2,13 +2,63 @@
   display: block;
   background: #ed9;
   color: #333335;
+  cursor: pointer;
+  cursor: hand;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .navbar * {
   display: inline-block;
 }
 .navbar header {
   padding: 0.25em;
-  font-size: 2em;
+  font-size: 1em;
+}
+.navbar .hint {
+  font-size: 0.8em;
+  color: #a0861b;
+}
+.toolbar {
+  display: block;
+  background: #777;
+  padding: 0.5em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-left: 10px solid #555;
+}
+.toolbar label {
+  font-size: 0.8em;
+  font-family: Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
+}
+#toggle-overtype {
+  font-size: 0.8em;
+  font-family: Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
+  border: 1px solid #333;
+  color: #333;
+  padding: 0.25em;
+  margin-right: 0.25em;
+  cursor: pointer;
+  cursor: hand;
+}
+#toggle-overtype.active {
+  border-color: #ccc;
+  color: #ccc;
+}
+.labeled-input {
+  padding: 0.25em;
+}
+#input-strings {
+  border: 1px solid #333;
+  font-family: Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
+  font-size: 0.8em;
 }
 .preset-select .tuning {
   color: #777;
@@ -18,11 +68,4 @@
 #tab {
   overflow-y: scroll;
   border-left: 10px solid #555;
-}
-#btn-overwrite {
-  border: 2px solid #333;
-  background: #efefef;
-}
-#btn-overwrite.active {
-  background: #2ae;
 }

@@ -38,7 +38,7 @@
           return 'implied';
         }
 
-        if (stream.match(/[0-9]+(?!\))/)) {
+        if (stream.match(/^[0-9]+(?!\))/)) {
           return 'fret';
         }
 

@@ -11,10 +11,15 @@
 <body>
   <nav class="navbar">
     <header>gtrtab</header>
-    <label for="strings">Strings:</label>
-    <input id="input-strings" type="number" name="strings" value="6" min="2" max="12" />
-    <input type="button" id="btn-overwrite" name="toggle-overwrite" value="overwrite" />
+    <span class="hint">click to toggle toolbar</span>
   </nav>
+  <div class="toolbar">
+    <span id="toggle-overtype">OVR</span>
+    <span class="labeled-input">
+      <label for="strings">Strings</label>
+      <input id="input-strings" type="number" name="strings" value="6" min="2" max="12" />
+    </span>
+  </div>
   <div id="tab"></div>
   <script data-main="scripts/main.js" src="vendor/requirejs/require.js"></script>
 </body>

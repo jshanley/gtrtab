@@ -138,7 +138,7 @@ define(['jquery', 'codemirror'], function($,CM) {
     };
 
     tab.handleOverwriteToggle = function() {
-      $('#btn-overwrite').toggleClass('active');
+      $('#toggle-overtype').toggleClass('active');
       tab.toggleOverwrite();
     };
 
