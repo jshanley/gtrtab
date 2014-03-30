@@ -5,7 +5,7 @@ ASCII guitar tabs are awesome, but writing them is tedious.
 
 This will help.
 
-### [try it here >>](jshanley.github.io/gtrtab)
+### [try it here >>](http://jshanley.github.io/gtrtab)
 
 ## Now what?
 
