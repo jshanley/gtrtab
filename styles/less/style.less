@@ -1,4 +1,4 @@
-@mono: Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
+@mono: "Fira Mono", Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
 
 .user-select(@sel) {
   -webkit-touch-callout: @sel;
@@ -8,10 +8,19 @@
   -ms-user-select: @sel;
   user-select: @sel;
 }
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+@navbar-color: #d7d7d7;
 
 .navbar {
   display: block;
-  background: #ed9;
+  background: @navbar-color;
   color: #333335;
   cursor: pointer;
   cursor: hand;
@@ -21,32 +30,34 @@
   header {
     padding: 0.25em;
     font-size: 1em;
+    font-weight: bold;
   }
   .hint {
     font-size: 0.8em;
-    color: darken(#ed9, 40%);
+    color: darken(@navbar-color, 40%);
   }
   .user-select(none);
 }
 
 .toolbar {
+  line-height: 1em;
   display: block;
   background: #777;
   padding: 0.5em;
   .user-select(none);
-  border-left: 10px solid #555;
   label {
     font-size: 0.8em;
-    font-family: @mono;
+    text-transform: uppercase;
   }
 }
 
 #toggle-overtype {
   font-size: 0.8em;
-  font-family: @mono;
+  font-weight: bold;
   border: 1px solid #333;
+  .border-radius(5px);
   color: #333;
-  padding: 0.25em;
+  padding: 0.3em;
   margin-right: 0.25em;
   cursor: pointer;
   cursor: hand;
@@ -58,6 +69,10 @@
 
 .labeled-input {
   padding: 0.25em;
+  input {
+    padding: 3px;
+    padding-bottom: 0;
+  }
 }
 
 #input-strings {
@@ -76,5 +91,4 @@
 
 #tab {
   overflow-y: scroll;
-  border-left: 10px solid #555;
 }

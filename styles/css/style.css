@@ -1,6 +1,6 @@
 .navbar {
   display: block;
-  background: #ed9;
+  background: #d7d7d7;
   color: #333335;
   cursor: pointer;
   cursor: hand;
@@ -17,12 +17,14 @@
 .navbar header {
   padding: 0.25em;
   font-size: 1em;
+  font-weight: bold;
 }
 .navbar .hint {
   font-size: 0.8em;
-  color: #a0861b;
+  color: #717171;
 }
 .toolbar {
+  line-height: 1em;
   display: block;
   background: #777;
   padding: 0.5em;
@@ -32,18 +34,22 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border-left: 10px solid #555;
 }
 .toolbar label {
   font-size: 0.8em;
-  font-family: Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
+  text-transform: uppercase;
 }
 #toggle-overtype {
   font-size: 0.8em;
-  font-family: Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
+  font-weight: bold;
   border: 1px solid #333;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
   color: #333;
-  padding: 0.25em;
+  padding: 0.3em;
   margin-right: 0.25em;
   cursor: pointer;
   cursor: hand;
@@ -55,9 +61,13 @@
 .labeled-input {
   padding: 0.25em;
 }
+.labeled-input input {
+  padding: 3px;
+  padding-bottom: 0;
+}
 #input-strings {
   border: 1px solid #333;
-  font-family: Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
+  font-family: "Fira Mono", Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
   font-size: 0.8em;
 }
 .preset-select .tuning {
@@ -67,5 +77,4 @@
 }
 #tab {
   overflow-y: scroll;
-  border-left: 10px solid #555;
 }

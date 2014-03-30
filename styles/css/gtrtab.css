@@ -1,8 +1,9 @@
 .cm-s-gtrtab.CodeMirror {
   line-height: 1.40em;
-  font-family: Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
+  font-family: "Fira Mono", Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
   color: #eee;
-  background: #333335;
+  background: #222223;
+  padding: 1em;
 }
 .cm-s-gtrtab .CodeMirror-lines .CodeMirror-cursor {
   border-left: 2px solid #dfdada;
